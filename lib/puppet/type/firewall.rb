@@ -1840,6 +1840,15 @@ Puppet::Type.newtype(:firewall) do
     PUPPETCODE
   end
 
+  newproperty(:oif, required_features: :interface_match) do
+    desc <<-PUPPETCODE
+      The TEE target will clone a packet and redirect this clone to another
+      machine on the local network segment. oif is the target host's interface.
+    PUPPETCODE
+
+    newvalues(%r{^!?\s?[a-zA-Z0-9\-\._\+\:@]+$})
+  end
+
   newproperty(:ipset, required_features: :ipset, array_matching: :all) do
     desc <<-PUPPETCODE
       Matches against the specified ipset list.
