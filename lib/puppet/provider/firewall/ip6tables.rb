@@ -112,6 +112,7 @@ Puppet::Type.type(:firewall).provide :ip6tables, parent: :iptables, source: :ip6
     dst_range: '--dst-range',
     dst_type: '--dst-type',
     gateway: '--gateway',
+    oif: '--oif',
     gid: '--gid-owner',
     goto: '-g',
     hop_limit: '-m hl --hl-eq',
